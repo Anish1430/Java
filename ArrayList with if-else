@@ -1,0 +1,113 @@
+Questions:-  ArrayList with if-else.(HackerRank).
+
+First Declare an ArrayList arr.
+Then take  as an Integer input.
+Format for next T Lines : (Case,x(option))
+
+case 1: Print the size of the ArrayList in a separate line.
+case 2: Print and Remove element from the last index of the ArrayList.
+case 3: Print x and Add x in last index of the ArrayList.
+case 4: Print and Remove an element from the starting (index = 0) of the ArraList.
+case 5: Print x and Add x at beginning (index = 0) of the ArrayList.
+case 6: Print all the elements from left to right that are there inside the ArrayList.
+Note : In case 2,4,6 when arr is empty the move is invalid, so print "invalid-move all lowercase".
+
+Input Format
+
+Single Integer T .
+For next T lines we can have single or pair of Integers (Case,x(option)).
+Note : we have x in cases where it is needed and otherwise not present.
+Constraints
+
+0 <= T <= 1000
+1 <= case <= 6
+0 <= x <= 1000
+Output Format
+
+Print the information that is explained in the statement according to case.
+
+Sample Input 0
+
+8
+2
+6
+3 2
+5 1
+6
+1
+3 3
+2
+
+Sample Output 0
+
+invalid-move
+invalid-move
+2
+1
+1 2
+2
+3
+3
+
+Explanation 0
+First two moves in invalid becuase arr is empty.
+ arr= [2], x = 2.
+ arr= [1,2], x = 1.
+ arr= [1,2]
+ arr= [1,2], size = 2.
+ arr= [1,2,3], x = 3.
+ arr= [1,2], arr.last_element = 3.
+
+
+
+ Solutions Starts Here ..........................
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+           ArrayList<Integer> arr=new ArrayList<>();
+            int t=sc.nextInt();
+          for(int i=0;i<t;i++)
+          {
+              int option=sc.nextInt();
+              if(option==1) {
+                 int ans=arr.size();
+               System.out.println(ans);
+              }else if(option==2) {
+                  if(arr.size()==0) {
+                      System.out.println("invalid-move");
+                  }else {
+                      int ans=arr.remove(arr.size()-1);
+                      System.out.println(ans);
+                  } 
+              }else if(option==3){
+                int x=sc.nextInt();
+                 System.out.println(x);
+                   arr.add(x);   
+              }else if(option==4) {
+                  if(arr.size()==0)
+                  {
+                      System.out.println("invalid-move");
+                  }else {
+                      int ans=arr.remove(0);
+                      System.out.println(ans);
+                  }
+              }else if(option==5) {
+                  int x=sc.nextInt();
+                  System.out.println(x);
+                  arr.add(0,x);
+              } else if(option==6) {
+                  if(arr.size()==0) {
+                      System.out.println("invalid-move");
+                  }else {
+                      for(int val : arr) {
+                          System.out.print(val+" ");
+                          }
+                      System.out.println();
+                  }
+                }
+          }}}
+
