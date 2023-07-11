@@ -1,0 +1,75 @@
+Questions:-  Stack Syntax Learning
+ Declare an Empty Stack s.
+Take Single Integer T as input.
+For next  Lines format(Case,x(optional)). 
+case 1. Print the size of the stack in a separate line.
+case 2. Remove an element from the stack. If the stack is empty then print -1 in a separate line.
+case 3. Add Integer x to the stack s.
+case 4. Print an element at the Top of the stack. If stack is empty print -1 in a seperate line.
+Input Format
+
+Single Integer T.
+T Lines of format (Case,x(optional)).
+
+Constraints
+
+1 <= T <= 10^4
+0 <= x <= 10^8
+Output Format
+
+According to case Print the information explained, if its not possible then -1.
+Sample Input 0
+
+10
+3 1
+3 2
+4
+4
+2
+4
+3 4
+2
+4
+1
+Sample Output 0
+
+2
+2
+1
+1
+1
+Explanation 0
+Based on instructions given, desired Output is obtained.
+
+   //  Solutions.................
+       
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+          Stack<Integer> stk=new Stack<>();
+          int t=sc.nextInt();
+           for(int i=0;i<t;i++)
+            {
+               int option=sc.nextInt();
+                 if(option==1) {
+                     System.out.println(stk.size());
+                 }else if(option==2) {
+                     if(stk.size()==0) {
+                         System.out.println(-1);
+                     }else {
+                         stk.pop();
+                     }
+                 }else if(option==3) {
+                     int x=sc.nextInt();
+                     stk.push(x);
+                 }else if(option==4) {
+                      if(stk.size()==0){
+                          System.out.println(-1);
+                      }else {
+                          System.out.println(stk.peek());
+                      }
+                 }
+           }}}
+
