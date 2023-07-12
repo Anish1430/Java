@@ -1,0 +1,67 @@
+Questions:- Using Stack-Next greater element on left 1.
+
+Given an array Arr, print the Next Greater Element (NGE) for every element . The Next greater Element for an element x is the first
+greater element on the left side of x in the array. Elements for which no greater element exist, consider the next greater element as -1.
+
+Input Format
+
+First line contains an integer N representing the size of the array.
+Next N lines contains elements of the array.
+Constraints
+
+1 <= N <= 1000
+-1000 <= arr[i] <= 1000
+Output Format
+
+Print the answer array seperated by a single space
+Sample Input 0
+
+5
+3 4 3 2 1
+Sample Output 0
+
+-1 -1 4 3 2
+Explanation 0
+
+No element on left of  arr[0]= 3, which is greater so res[0] = -1.
+No element on left of  arr[1]= 4, which is greater so  res[1]= -1.
+4 is nearest element to the left of  arr[2]= 3, which is greater so  res[2]= 4.
+3 is nearest element to the left of  arr[3]= 2, which is greater so  res[3]= 3.
+2 is nearest element to the left of  arr[4]= 1, which is greater so  res[4]= 2.
+
+  // Solutions.....................................
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+  public static int[] nextGreater(int arr[]) {
+        int ans[]=new int[arr.length];
+      Stack<Integer> stk=new Stack<>();
+       for(int i=0;i<arr.length;i++)
+       {
+           while(stk.size() > 0 && arr[stk.peek()] <= arr[i]) {
+               stk.pop();
+           }
+             if(stk.size() == 0)
+             ans[i]=-1;
+           else 
+               ans[i]=arr[stk.peek()];
+              stk.push(i);
+       }
+      return ans;
+  }
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+          int arr[]=new int[n];
+          for(int i=0;i<n;i++)
+          {
+              arr[i]=sc.nextInt();
+          }
+            int ans[]=new int[n];
+             ans=nextGreater(arr);
+         for(int val : ans) {
+             System.out.print(val + " ");
+         }
+    }
+}
