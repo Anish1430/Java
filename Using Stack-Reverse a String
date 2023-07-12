@@ -1,0 +1,48 @@
+Questions :- Using Stack-Reverse A String
+Given a String Str. We have to Reverse the string Str with help of only Stack.
+
+Input Format
+Single String Str.
+
+Constraints
+
+1 <= Str.length() <= 10^5
+Output Format
+
+Print the Reverse of the String Str.
+
+Sample Input 0
+
+abcdee
+Sample Output 0
+
+eedcba
+Explanation 0
+
+reverse of "abcdee" => "eedcba"
+
+  Solution...............
+
+    import java.io.*;
+    import java.util.*;
+    public class Solution {
+   public static String reverseString(String str) {
+        Stack<Character> stk=new Stack<>();
+         for(int i=0;i<str.length();i++) {
+             char ch=str.charAt(i);
+               stk.push(ch);
+         }
+          String rev="";
+          while(stk.size() > 0) {
+              char ch=stk.pop();
+                rev +=ch;
+          }
+        return rev;     
+    }
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+          String str=sc.next();
+          String ans=reverseString(str);
+          System.out.println(ans);
+    }
+}
