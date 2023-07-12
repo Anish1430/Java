@@ -1,0 +1,63 @@
+Question : Using Stack-valid parentheses Only "()".
+
+Given a string s containing just the characters '(', ')' determine if the input string is balanced or not.
+
+NOTE :-After answering the question, attempt the related question in the linked resource to improve your understanding of this question.
+Input Format
+
+Single String consisting of only '(', ')'.
+
+Constraints
+
+1 <= str.length() <= 10^4
+Output Format
+
+Print true if parentheses is valid else false.
+
+Sample Input 0
+
+(()()
+Sample Output 0
+
+false
+Explanation 0
+
+String not valid.
+Sample Input 1
+()
+Sample Output 1
+true
+Explanation 1
+String is valid.
+
+// Solution.........................................
+
+ import java.io.*;
+ import java.util.*;
+public class Solution {
+  public static boolean validParen(String str) {
+        Stack<Character> stk=new Stack<>();
+         for(int i=0;i<str.length();i++)
+         {
+             if(str.charAt(i)=='(')  {
+                 stk.push(')');
+             }else {
+                 if(stk.size()==0)
+                 {
+                     return false;
+                 }
+                 stk.pop();
+             }
+         }
+        if(stk.size()==0)
+          return true;
+        else 
+              return false;
+  }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          String str=sc.next();
+           boolean ans=validParen(str);
+           System.out.println(ans);
+    }
+}
