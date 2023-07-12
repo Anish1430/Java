@@ -1,0 +1,68 @@
+Questions :-Reverse a Number(Using Stack Data Structure).
+Given Single Integer T. Next T lines will have a Single Integer N.
+Print the Reverse of the Integer N.
+(Note: You have to use stack to perform this operation)
+Input Format
+
+Single Integer T.
+Next T lines will have Single Integer N.
+
+Constraints
+
+ 1<= T <= 10^4
+ 0<= N <= 10^8
+
+Output Format
+
+T Lines of Reverse of N Integers.
+Sample Input 0
+
+4
+1234
+1001
+1000
+2340
+Sample Output 0
+
+4321
+1001
+1
+432
+Explanation 0
+
+ 1234-->4321
+ 1001-->1001 
+ 1000-->0001 -->1 
+ 2340-->432 
+
+Solutions........................
+
+ import java.io.*;
+ import java.util.*;
+public class Solution {
+   public static int reverse(int num) {
+       Stack<Integer> stk=new Stack<>();
+          while(num != 0) {     //num is not Equal to zero
+          stk.push(num%10); // ex(1234) first stack will be 4 then 3 then 2 then 1
+             num /=10;    //ex(1234) the result will be 123 , then 12, then 1 ,then 0 (while condition reach then stop the while loop).
+          }
+           int rev=0;
+          int temp=1;
+           while(!stk.isEmpty())
+           {
+             rev +=stk.pop() * temp;
+              temp *=10;
+           }
+       return rev; 
+   }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+           int t=sc.nextInt();
+           for(int i=0;i<t;i++)
+           {
+               int num=sc.nextInt();
+               int ans=reverse(num);
+               System.out.println(ans);
+           }
+    }
+}
