@@ -1,0 +1,63 @@
+Questions :- Using HashMap->Contains Duplicate .
+
+Take an integer array arr as input and print "true" if any value appears at least twice in the array, else print "false" if every element is distinct.
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of the question . Question Link -> https://leetcode.com/problems/contains-duplicate/
+
+Input Format
+
+An Integer N.
+N integers depicting elements of array.
+Constraints
+
+1 <= arr.length <= 10^5
+-10^9 <= arr[i] <= 10^9
+Output Format
+
+"true" or "false"
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+false
+Sample Input 1
+
+5 
+1 2 2 3 1
+Sample Output 1
+
+true
+
+// Solution.............................
+   
+ import java.io.*;
+import java.util.*;
+public class Solution {
+  public static boolean dublicate(int arr[]) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+         for(int i=0;i<arr.length;i++) {
+             int oldFreq=hm.getOrDefault(arr[i],0);
+               hm.put(arr[i],oldFreq + 1);
+         }
+          for(int key : hm.keySet())  {
+              int freq=hm.get(key);
+              if(freq > 1){
+                  return true;
+              }
+          }
+      return false;
+  }
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+          int n=sc.nextInt();
+          int arr[]=new int[n];
+          for(int i=0;i<n;i++)
+          {
+              arr[i]=sc.nextInt();
+          }
+           boolean ans=dublicate(arr);
+           System.out.println(ans);
+    }
+}
