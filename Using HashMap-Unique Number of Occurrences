@@ -1,0 +1,72 @@
+Question: Unique Number of Occurrences.
+Take an array of integers arr as input from user and print "true" if the number of occurrences of each value in the array is unique, else print "false".
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of this question . Clickhere
+
+Input Format
+
+An Integer N.
+N integers depicting elements of array.
+Constraints
+
+1 <= arr.length <= 10^6
+-10^9 <= arr[i] <= 10^9
+Output Format
+
+"true" or "false"
+Sample Input 0
+
+6
+1 2 2 1 1 3
+Sample Output 0
+
+true
+Explanation 0
+
+The value 1 has 3 occurrences, 2 has 2 and 3 has 1. No two values have the same number of occurrences.
+
+Sample Input 1
+
+4
+1 2 1 2
+Sample Output 1
+
+false.
+
+///// Solution.....................
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+  public static boolean uniqueOccur(int arr[]) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+         for(int i=0;i<arr.length;i++)
+         {
+             int oldFreq=hm.getOrDefault(arr[i], -1);
+               hm.put(arr[i], oldFreq + 1);
+         }
+        HashMap<Integer,Integer> inv=new HashMap<>();
+        for(int key : hm.keySet()) {
+             int val=hm.get(key);
+             if(inv.containsKey(val)==true) {
+                 return false;
+             }
+              inv.put(val,key);
+        }
+         return true;  
+  }
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+          int n=sc.nextInt();
+           int arr[]=new int[n];
+          for(int i=0;i<n;i++)
+          {
+              arr[i]=sc.nextInt();
+          }
+           boolean ans=uniqueOccur(arr);
+           System.out.println(ans);
+    }
+}
+
+
