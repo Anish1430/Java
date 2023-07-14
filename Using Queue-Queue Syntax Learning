@@ -1,0 +1,76 @@
+Qustion:-  Queue Syntax Learning.
+
+Declare an Empty Queue s.
+Take Single Integer  T as input.
+For next  Lines format(case,x(optional)); 
+case 1.Print the size of the Queue in a separate line.
+case 2.Remove an element from the queue. If the queue is empty then print -1 in a separate line.
+case 3. add Integer x to the Queue s .
+case 4. print an element at the front of the queue. If queue is empty print -1 in a seperate line.
+Input Format
+
+Single Integer T.
+T Lines of format (case,x(optional)).
+Constraints
+
+1 <= T <= 10^4
+0 <= x <= 10^8
+Output Format
+
+According to case Print the information explained, if its not possible then -1.
+Sample Input 0
+
+5
+1
+2
+3 9
+4
+1
+Sample Output 0
+
+0
+-1
+9
+1
+Explanation 0
+
+Q = [ ], size = 0
+Q = [ ], can't remove so invalid move -1
+Q = [ ] => Q = [9]
+Q = [9] so Q.top() = 9
+Q = [9] so Q.size() = 1
+
+
+  //Solution.....................
+    
+import java.io.*;
+import java.util.*;
+public class Solution {
+ public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+        Queue<Integer> q=new ArrayDeque<>();
+         int t=sc.nextInt();
+          for(int i=0;i<t;i++) {
+              int option=sc.nextInt();
+                if(option==1) {
+                    System.out.println(q.size());
+                }else if(option==2) {
+                    if(q.size() == 0) {
+                        System.out.println(-1);
+                    }
+                   else {
+                       q.remove();
+                   }
+                }else if(option==3) {
+                    int x=sc.nextInt();
+                      q.add(x);
+                }else if(option==4) {
+                    if(q.size()==0)
+                    {
+                        System.out.println(-1);
+                    }else {
+                        System.out.println(q.peek());
+                    }
+                }
+          }}}
+
