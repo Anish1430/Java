@@ -1,0 +1,50 @@
+Question :-  Print Binary(0 and 1).
+
+Given a number N.The task is to generate and print all binary numbers with decimal values from 1 to N.(Note:Use the queue for implementation.)
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of this question.
+Input Format
+
+Single Integer N.
+
+Constraints
+
+1 <= N <= 1000
+
+Output Format
+
+Binary representaion of 1 to N seperated by single spaces.
+
+Sample Input 0
+
+4
+Sample Output 0
+
+1 10 11 100
+Explanation 0
+
+1(Decimal) => 1(Binary)
+2(Decimal) => 10(Binary)
+3(Decimal) => 11(Binary)
+4(Decimal) => 100(Binary)
+
+
+///////Solution..........................
+
+    import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+            int n=sc.nextInt();
+         Queue<String> q=new ArrayDeque<>(); 
+           q.add("1");
+           for(int i=0;i<n;i++) 
+          {
+                String front=q.remove();
+                System.out.print(front + " ");
+               q.add(front + "0");
+               q.add(front + "1");
+           }
+    }}
+
