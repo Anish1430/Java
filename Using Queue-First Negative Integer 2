@@ -1,0 +1,75 @@
+Given an array A[] of size N and a positive integer K, find the first negative integer for each and every window(contiguous subarray)
+of size K.
+
+NOTE :-After answering the question, attempt the related question in the linked resource to improve your understanding of this question.
+
+Input Format
+
+Two Integer N , K.
+N Integers spaced with single spaces.
+Constraints
+
+1 <= N <= 10^5
+-10^5 <= A[i] <= 10^5
+1 <= K <= N
+Output Format
+
+Print (N-K-1) Integers spaced with single spaces.
+Sample Input 0
+
+5 2
+-8 2 3 -6 10
+Sample Output 0
+
+-8 0 -6 -6
+Explanation 0
+
+First negative integer for each window of size k
+{-8, 2} = -8
+{2, 3} = 0 (does not contain a negative integer)
+{3, -6} = -6
+{-6, 10} = -6
+
+
+//Solution.................
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+ public static ArrayList<Integer> firstNegative(int arr[],int n,int k) {
+     int left=0;int right=k-1;
+     ArrayList<Integer> ans=new ArrayList<>();
+     Queue<Integer> q=new ArrayDeque<>();
+       for(int i=left;i<right;i++) {
+             if(arr[i] < 0 )
+                 q.add(arr[i]);
+       }
+       while(right < n ) {
+            if(left > 0 && arr[left - 1] < 0)
+                q.remove();
+            if(arr[right] < 0 ) 
+                q.add(arr[right]);
+             left++;
+             right++;
+           if(q.size() == 0) 
+               ans.add(0);
+             else 
+             ans.add(q.peek());
+       }
+         return ans;
+  }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          int n=sc.nextInt();
+          int k=sc.nextInt();
+          int arr[]=new int[n];
+           for(int i=0;i<n;i++)
+           {
+               arr[i]=sc.nextInt();
+           }
+           ArrayList<Integer> res=firstNegative(arr,n,k);
+             for(int val : res) {
+                 System.out.print(val  +" ");
+             }
+    }
+}
