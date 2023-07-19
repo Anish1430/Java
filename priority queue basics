@@ -1,0 +1,57 @@
+Question:-  learn priority queue basics.
+
+Take T as an integer input. Then take t integer elements as input. Each time you take an input. Print the smallest element so far, 
+each time a new element is taken as an input.
+
+Input Format
+
+Single Integer T.
+T lines of Input with sinlge Integer.
+Constraints
+
+ 0< T <=10^5. 
+-10<= A[i] <= 10^6.
+Output Format
+
+ Lines of Output with minimum element.
+
+Sample Input 0
+
+5
+4
+2
+1
+3
+-1
+Sample Output 0
+
+4
+2
+1
+1
+-1
+Explanation 0
+
+ A= [4] , min_element = 4.
+ A= [4, 2] , min_element = 2.
+ A= [4, 2, 1] , min_element = 1.
+ A= [4, 2, 1, 3] , min_element = 1.
+ A= [4, 2, 1, 3, -1] , min_element = -1.
+
+
+
+//Solutions .....................
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          int test=sc.nextInt();
+         PriorityQueue<Integer> pq=new PriorityQueue<>();
+           for(int i=0;i<test;i++) {
+               int x=sc.nextInt();
+               pq.add(x);
+               System.out.println(pq.peek());
+           }
+        }}
