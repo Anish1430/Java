@@ -1,0 +1,58 @@
+Questions:- Using Min-Heap minimum digits.
+
+Given an array of digits (values are from 0 to 9), find the minimum possible sum of two numbers formed from digits of the array. 
+All digits of the given array must be used to form the two numbers.
+
+Any combination of digits may be used to form the two numbers to be summed. Leading zeroes are permitted.
+
+If forming two numbers is impossible (i.e. when n==0) then the "sum" is the value of the only number that can be formed.
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of this question.
+
+Input Format
+
+Single Integer N.
+N integers seperated with single space.
+Constraints
+
+1 ≤ N ≤ 35
+0 ≤ A[i] ≤ 9
+Output Format
+
+Single Integer Sum.
+
+Sample Input 0
+
+6
+6 8 4 5 2 3
+Sample Output 0
+
+604
+Explanation 0
+
+The minimum sum is formed by numbers 358 and 246.
+
+//Solution....................///
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        PriorityQueue<Long> pq=new PriorityQueue<>();
+          long n=sc.nextInt();
+          for(int i=0;i<n;i++) {
+              long x=sc.nextInt();
+              pq.add(x);
+          }
+        long num1=0 ,  num2=0;
+        for(int i=0;i<n;i++) {
+              long digit=pq.remove();
+            if(i % 2 == 0) {
+                num1= num1 * 10 +  digit;
+            }else {
+                num2= num2 * 10 +  digit;
+            }}
+        System.out.println(num1 + num2);     
+    }         
+}
