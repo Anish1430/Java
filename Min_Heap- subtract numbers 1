@@ -1,0 +1,68 @@
+Question:- Using priorityQueue(Min Heap - subtract numbers 1).
+
+You are given a non-negative integer array nums. In one operation, you must:
+
+Choose a positive integer x such that x is less than or equal to the smallest non-zero element in nums.
+Subtract x from every positive element in nums.
+Return the minimum number of operations to make every element in nums equal to 0.
+
+Input Format
+
+Single Integer N.
+N Integers seperated with single space.
+Constraints
+
+1 <= nums.length <= 10^5
+0 <= nums[i] <= 10^5
+Output Format
+
+Single Integer representing steps.
+
+Sample Input 0
+
+5
+1 5 0 3 5
+Sample Output 0
+
+3
+
+Explanation 0
+
+In the first operation, choose x = 1. Now, nums = [0,4,0,2,4].
+In the second operation, choose x = 2. Now, nums = [0,2,0,0,2].
+In the third operation, choose x = 2. Now, nums = [0,0,0,0,0].
+
+//Solution.........................
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+public static int subtractNumber(int arr[]) {
+      PriorityQueue<Integer>  pq=new PriorityQueue<>();
+      for(int i=0;i<arr.length;i++)
+      {
+            if(arr[i] > 0) {
+              pq.add(arr[i]);
+            }
+      }
+      int count=0; int last=0;
+     while(pq.size() > 0) {
+         int current=pq.remove();   //Like 1 (0+1=1) then 5,5(1+1=2) then 3(2+1=3) so count=3 operation.
+         if(current != last) {
+             count++;
+             last=current;
+         }}
+    return count;
+}
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          int n=sc.nextInt();
+          int arr[]=new int[n];
+          for(int i=0;i<n;i++)
+          {
+              arr[i]=sc.nextInt();
+          }
+         int ans=subtractNumber(arr);
+          System.out.println(ans);
+    }
+}
