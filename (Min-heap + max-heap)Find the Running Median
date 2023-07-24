@@ -1,0 +1,119 @@
+Qustions:-(Using MIN-heap and MAX-Heap) Find the Running Median(Hacker-Rank).
+
+The median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than
+the value. To find the median, you must first sort your set of integers in non-decreasing order, then:
+
+If your set contains an odd number of elements, the median is the middle element of the sorted sample. 
+In the sorted set {1,2,3}, 2 is the median.
+If your set contains an even number of elements, the median is the average of the two middle elements of the sorted sample. 
+In the sorted set {1,2,3,4}, (2+3) / 2 is the median.
+Given an input stream of  integers, perform the following task for each ith integer:
+
+Add the ith integer to a running list of integers.
+Find the median of the updated list (i.e., for the first element through the ith element).
+Print the updated median on a new line. The printed value must be a double-precision number scaled to  decimal place (i.e., 12.3 format).
+Example
+a={7,3,5,2}
+Sorted          Median
+[7]             7.0
+[3, 7]          5.0
+[3, 5, 7]       5.0
+[2, 3, 5, 7]    4.0
+Each of the median values is stored in an array and the array is returned for the main function to print.
+
+Note: Add formatting to the print statement.
+
+Function Description
+Complete the runningMedian function in the editor below.
+
+runningMedian has the following parameters:
+- int a[n]: an array of integers
+
+Returns
+- float[n]: the median of the array after each insertion, modify the print statement in main to get proper formatting.
+
+Input Format
+
+The first line contains a single integer, , the number of integers in the data stream.
+Each line i of the n subsequent lines contains an integer, a[i], to be inserted into the list.
+
+Constraints
+
+1<=n<=10^5
+0<=a[i]<=10^5
+
+Sample Input
+
+STDIN   Function
+-----   --------
+6       a[] size n = 6
+12      a = [12, 4, 5, 3, 8, 7]
+4
+5
+3
+8
+7
+Sample Output
+
+12.0
+8.0
+5.0
+4.5
+5.0
+6.0
+
+Explanation
+
+There are  integers, so we must print the new median on a new line as each integer is added to the list:
+
+
+//Solution.............................
+
+import java.util.*;
+public class Solutions {
+   public static double[] findMedian(int arr[]) {
+          int n=arr.length;
+//Create a double array for storing the Median value
+         double ans[]=new double[n];
+        //Left half for -->> Maximum Value..............
+         PriorityQueue<Integer> left=new PriorityQueue<>(Collections.reverseOrder());
+        
+       //Right half for --> Minimum Value ...........
+          PriorityQueue<Integer> right=new PriorityQueue<>();
+         
+       // It Check if left and right is empty or not for fill the value......
+        for(int idx=0; idx <n; idx++) {
+            if(left.size() == 0 || arr[idx] < left.peek()) {
+                left.add(arr[idx]);
+            }else {
+                right.add(arr[idx]);
+            }
+        //For Balancing the PriorityQueue  
+      if(left.size() - right.size() >= 2 ) {
+          right.add(left.remove());
+      }else if(right.size() - left.size() >= 2) {
+          left.add(right.remove());
+      }
+        //For Find The Median.
+        if(left.size() > right.size()){
+            ans[idx]=left.peek();
+        }else if(right.size() > left.size()) {
+            ans[idx]=right.peek();
+        }else {
+            ans[idx]=(left.peek() + right.peek()) / 2.0;
+        } }
+        return ans;
+    }
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+         int arr[]=new int[n];
+         for(int i=0;i<n;i++) {
+             arr[i]=sc.nextInt();
+         }
+            double ans[]=findMedian(arr);
+          for(double val : ans) {
+              System.out.println(val);
+          }
+    }
+}
