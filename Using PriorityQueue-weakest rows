@@ -1,0 +1,100 @@
+Question:- weakest rows.
+
+You are given an m x n binary matrix mat of 1's (representing soldiers) and 0's (representing civilians).The soldiers are positioned 
+in front of the civilians. That is, all the 1's will appear to the left of all the 0's in each row.
+
+A row i is weaker than a row j if one of the following is true:
+
+The number of soldiers in row i is less than the number of soldiers in row j.
+Both rows have the same number of soldiers and i<j.
+Return the indices of the k weakest rows in the matrix ordered from weakest to strongest.
+
+NOTE :- After answering the question, attempt the related question in the linked resource to improve your understanding of this question . Click here
+
+Input Format
+
+Three Integers M, N, K.
+M lines of N Integers spaces with single space.
+Constraints
+
+m == mat.length
+n == mat[i].length
+2 <= n, m <= 10000
+1 <= k <= m
+matrix[i][j] is either 0 or 1.
+
+Output Format
+
+k Integers spaced with single space.
+
+Sample Input 0
+
+5 5 3
+1 1 0 0 0
+1 1 1 1 0
+1 0 0 0 0 
+1 1 0 0 0 
+1 1 1 1 1
+Sample Output 0
+
+2 0 3
+Explanation 0
+
+The number of soldiers in each row is:
+
+Row 0: 2
+Row 1: 4
+Row 2: 1
+Row 3: 2
+Row 4: 5
+The rows ordered from weakest to strongest are [2,0,3,1,4].
+
+//////  Solutions...........................
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static int countSoldiers(int[][] mat, int row) {
+        int count = 0;
+        for(int col = 0; col < mat[0].length; col++) {
+            if(mat[row][col] == 1)
+                count++;
+        }
+        return count;
+    } 
+    public static void printAnswer(int[][] mat, int k){
+        PriorityQueue<int[]> pq = new PriorityQueue<>(
+            (a, b) -> {
+                if(a[1] != b[1]) return a[1] - b[1];
+                else return a[0] - b[0];
+            }
+        );
+        for(int row = 0; row < mat.length; row++)    {
+            int[] arr = new int[2];
+            arr[0] = row;
+            arr[1] = countSoldiers(mat, row);
+            pq.add(arr);
+        }
+        
+        for(int idx = 0; idx < k; idx++){
+            int[] arr = pq.remove();
+            System.out.print(arr[0] + " ");
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int m = scn.nextInt();
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+        
+        int[][] mat = new int[m][n];
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                mat[i][j] = scn.nextInt();
+            }
+        }
+        
+        printAnswer(mat, k);
+    }
+}
