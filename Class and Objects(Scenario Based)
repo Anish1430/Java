@@ -1,0 +1,77 @@
+Question :-Class and Objects(Scenario Based)
+
+You have to store the information about three movies named Batman 1, Batman 2, Batman 3.
+
+Store the below information about each of the movies by using the appropriate variables.
+
+
+Batman 1:
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+
+
+Batman 2:
+Name:Batman 2
+Rating: 9
+Money Collection: 500,000
+Profit: 8000
+Lead Actor: Rannvijay Singha & Prince Narula
+Lead Actress: Neha Dhupia
+
+
+Batman 3:
+Name:Batman 3
+Rating: 10
+Money Collection: 700,000
+Profit: 6000
+Lead Actor: Rachel Gupta & Prince Narula
+Lead Actress: Neha Dhupia
+Then print details of each of the movies in the format listed below.
+
+First print the below details of the Batman 1 movie such that each detail is printed in a separate line.
+
+Rating of the movie,
+Money Collection of the movie,
+Profit of the movie,
+Lead Actor of the movie,    
+Lead Actress of the movie.
+Similarly, from the next line, print the details of the movie Batman 2 and after that print the details of the movie Batman 3.
+
+You have to perform the above question by solving it using classes and objects.
+
+Input Format
+
+No input will be given to you.
+
+Constraints
+
+Constraints are according to the type of data input taken.
+
+Output Format
+
+On each line a single property should be printed.
+
+Sample Output 0
+
+8
+200000
+5000
+Rachel Gupta & Nikhil Chinapa
+Disha
+9
+500000
+8000
+Rannvijay Singha & Prince Narula
+Neha Dhupia
+10
+700000
+6000
+Rachel Gupta & Prince Narula
+Neha Dhupia
+
+
+//Solution.......................
