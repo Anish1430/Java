@@ -75,3 +75,76 @@ Neha Dhupia
 
 
 //Solution.......................
+
+  import java.io.*;
+import java.util.*;
+class Movie {
+    String Name;
+    int Rating;
+    long MoneyCollection;
+    long Profit;
+    String LeadActor;
+    String LeadActress;
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie();
+        //1st Movie 
+        
+        m1.Name="Batman 1";
+        m1.Rating=8;
+        m1.MoneyCollection=200000;
+        m1. Profit= 5000;
+        m1. LeadActor="Rachel Gupta & Nikhil Chinapa";
+        m1. LeadActress="Disha";
+        
+        //Printing 1st .
+         
+        System.out.println(m1.Rating);
+        System.out.println(m1.MoneyCollection);
+        System.out.println(m1.Profit);
+        System.out.println(m1.LeadActor);
+        System.out.println(m1.LeadActress);
+        
+    
+        Movie m2=new Movie();
+        //2nd Movie
+        
+        m2.Name="Batman 2";
+        m2.Rating=9;
+        m2.MoneyCollection=500000;
+        m2.Profit=8000;
+        m2.LeadActor="Rannvijay Singha & Prince Narula";
+        m2.LeadActress="Neha Dhupia";
+        
+        //Printing  2nd............
+        
+        
+        System.out.println(m2.Rating);
+        System.out.println(m2.MoneyCollection);
+        System.out.println(m2.Profit);
+        System.out.println(m2.LeadActor);
+        System.out.println(m2.LeadActress);
+        
+         Movie m3=new Movie();
+          //3rd Movie
+        
+         m3.Name="Batman 3";        
+         m3.Rating=10;
+         m3.MoneyCollection=700000;
+         m3. Profit= 6000;
+         m3. LeadActor="Rachel Gupta & Prince Narula";
+         m3. LeadActress="Neha Dhupia";
+        
+        //Printing 3rd
+        
+        
+        System.out.println(m3.Rating);
+        System.out.println(m3.MoneyCollection);
+        System.out.println(m3.Profit);
+        System.out.println(m3.LeadActor);
+        System.out.println(m3.LeadActress);
+        
+        }
+}
