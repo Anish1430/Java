@@ -1,0 +1,155 @@
+import java.io.*;
+import java.util.*;
+class Movie {
+//data --> Data member or Properties.
+       // (Data inside a class is known as Data member or Properties)
+
+    String name;
+    int rating;
+    long moneyCollection;
+    long profit;
+    String leadActor;
+    String leadActress;
+    
+      //methods or functions  --> Member Function or Behavior.
+    //(Function inside a class is known as Member Function or Behavior).
+    
+    
+     //setter:-setter sets or update the value of variable ....
+    
+      void setName(String newName) {
+          name=newName;
+      }
+      
+      void setRating(int newRating){
+          rating=newRating;
+      }
+     void setMoneyCollection(long newMoneyCollection) {
+         moneyCollection=newMoneyCollection;
+     }
+      void setProfit(long newProfit) {
+          profit=newProfit;
+      }
+      void setLeadActor(String newLeadActor){
+          leadActor=newLeadActor;
+      }
+      void setLeadActress(String newLeadActress){
+            leadActress=newLeadActress;
+      }
+  
+     //Getter Reads the value of variable......  
+     
+   String getName() {
+       return name;
+   }
+    int getRating() {
+        return rating;
+    }
+    
+     long getMoneyCollection() {
+         return moneyCollection;
+     }
+   long getProfit() {
+       return profit;
+   }
+    String getLeadActress(){
+        return leadActress;
+    }
+        String getLeadActor() {
+            return leadActor;
+        }
+    
+    //M2 === setter:-setter sets or update the value of variable ....
+    
+    void setName1(String newName1) {
+        name=newName1;
+    }
+    String getnewName1() {
+        return name;
+    }
+}
+
+class Movie1 {
+    String name;
+    int rating;
+    long money;
+    long profit;
+    String leadActor;
+    
+     //setter:-setter sets or update the value of variable ....
+      
+      void setName(String newName) {
+          name=newName;
+      }
+      void setRating(int newRating) {
+          rating=newRating;
+      }
+      void setMoney(long newMoney) {
+          money=newMoney;
+      }
+      void setProfit(long newProfit) {
+          profit=newProfit;
+      }
+    void setLeadActor(String newLeadActor) {
+        leadActor=newLeadActor;
+    }
+    
+    
+     //Getter Reads the value of variable......
+    
+     String getName() {
+         return name;
+     }
+    int getRating() {
+        return rating;
+    }
+    long getMoney() {
+        return money;
+    }
+     long getProfit() {
+         return profit;
+     }
+    String getLeadActor() {
+        return leadActor;
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie();
+        
+        //1st Movie 
+         
+        m1.setName("Batman 1");
+        m1.setRating(8);
+        m1.setMoneyCollection(200000);
+        m1.setProfit(5000);
+        m1.setLeadActor("Rachel Gupta & Nikhil Chinapa");
+        m1.setLeadActress("Disha");
+        
+        //Printing 1st .
+        System.out.println(m1.getName());
+        System.out.println(m1.getRating());
+        System.out.println(m1.getMoneyCollection());
+        System.out.println(m1.getProfit());
+        System.out.println(m1.getLeadActor());
+        System.out.println(m1.getLeadActress());
+        
+        System.out.println ();
+       // create second object //
+        Movie1 m2=new Movie1();
+         m2.setName("Batman 2");
+         m2.setRating(7);
+         m2.setMoney(5000000);
+         m2.setProfit(60000);
+         m2.setLeadActor("Akshay Kumar");
+        
+        //Print the 2nd Class.....
+        
+        System.out.println(m2.getName());
+        System.out.println(m2.getRating());
+        System.out.println(m2.getMoney());
+        System.out.println(m2.getProfit());
+         System.out.println(m2.getLeadActor());
+        }
+}
