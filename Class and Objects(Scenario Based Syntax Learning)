@@ -226,3 +226,59 @@ public class Solution {
         
     }
 }
+
+
+
+//1 more Solutions Its Easy to Implement the code..
+
+
+import java.io.*;
+import java.util.*;
+
+class Insta {
+    String name;
+    int posts;
+    int reels;
+    String tick;
+    int follower;
+    int following;
+    String rapper;
+    char gender;
+    
+    Insta(String name, int posts, int reels, String tick, int follower,int following,String rapper,char gender) {
+         this.name=name;
+        this.posts=posts;
+        this.reels=reels;
+        this.tick=tick;
+        this.follower=follower;
+        this.following=following;
+        this.rapper=rapper;
+        this.gender=gender;
+    }
+    public void print() {
+        System.out.println(this.name);
+        System.out.println(this.posts);
+        System.out.println(this.reels);
+        System.out.println(this.tick);
+        System.out.println(this.follower);
+        System.out.println(this.following);
+        System.out.println(this.rapper);
+        System.out.println(this.gender);
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Insta m1=new Insta("Raftaar", 340 , 400 , "Yes", 7, 200, "Rapper", 'M');
+          m1.print();
+        
+        Insta m2=new Insta("Rachel Gupta", 550, 350, "Yes", 15, 10,"Artist",'M');
+          m2.print();
+        
+        Insta m3=new Insta("Nikhil Chinapa",500,220,"Yes",5,210,"VJ",'M');
+        m3.print();
+        
+        Insta m4=new Insta("Baseer", 500,120,"No",2,230,"VJ",'M');
+         m4.print();
+    }
+}
