@@ -1,0 +1,81 @@
+  
+* In Java,A constructor is a block of code similar to the method.It is called when an instance of the class is created.
+* Every time an Object is Creating Using new() Keywords,Atleast One Constructor is Called.
+
+ Rules for Creating Java Constructor:-
+1. A constructor must be same as its Class Name.
+2. A contructor must have No Explicit return type.
+3. Constructor gets called as soon as the Object is Created.
+4. It is a Special type of Methods/Function.
+5. A contructor cannot be Abstract,static,final and Synchronized.
+6. Constructor can have Zero (0) or more Parameter.
+
+ Types of Constructor.
+1.Implicity Default Constructor.
+2.Explicit Default Constructor.
+3.Parameterized Constructor(Implicit).
+4.Parameterized Constructor(Explicit).
+
+Question:- Why we need Constructor.
+Ans-->> We need Constructor to Passed the Parameter/some value /some default values "As soon as the object is created ".
+
+import java.util.*;
+class Movie {
+    private int duration;
+    private String name, genre;
+    private double rating;
+
+    // DEFAULT IMPLICIT CONSTRUCTOR: NO PARAMETER + NO BODY
+    // public Movie(No Parameter + No Body ){ }
+
+// Constructor:Default Explicit Constructor(No Parameter but Body Present)
+    
+    public Movie( // No Parameter ) {   // But Body Present 
+        duration = 200;
+        name = "Anish Kumar";
+        rating = 4.0;
+        genre = "SuperVillain";
+    }
+//Getter -> Getter Reads The Value of Variable.
+
+    public int getDuration() {
+        return duration;
+    }
+
+//Setter --> Setter Sets and Update the value of variable.
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+}
+
+public class Driver {
+    public static void main(String[] args) { 
+        Movie m1 = new Movie();
+    System.out.print(m1.getName() + " " +  m1.getDuration() + " " + m1.getRating() + " " +  m1.getGenre());
+    }
+}
