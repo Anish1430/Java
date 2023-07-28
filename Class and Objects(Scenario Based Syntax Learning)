@@ -1,0 +1,228 @@
+Question:-Class and Objects(Scenario Based Syntax Learning).
+We want to store the data of three Insta Influencers
+
+RaftaarMusic
+Name: Raftaar
+Total Posts: 340
+Total Reels: 400
+Blue tick: Yes
+Followers(in millions) : 7
+Following: 200
+Category: Rapper
+Gender: M
+
+rachelGupta
+Name: Rachel Gupta
+Total Posts: 550
+Total Reels: 350
+Blue tick: Yes
+Followers(in millions) : 15
+Following: 10
+Category: Artist
+Gender: M
+
+NikhilChinapa
+Name: Nikhil Chinapa
+Total Posts: 500
+Total Reels: 220
+Blue tick: Yes
+Followers(in millions) : 5
+Following: 210
+Category: VJ
+Gender: M
+
+Baseer_bob
+Name: Baseer
+Total Posts: 500
+Total Reels: 120
+Blue tick: No
+Followers(in millions) : 2
+Following: 230
+Category: VJ
+Gender: M
+Then print details of each of the insta handles in the format listed below. First print the below details of the handle RaftaarMusic such that each detail is printed in a separate line.
+
+Name: 
+Total Posts: 
+Total Reels:
+Blue tick: 
+Followers(in millions) : 
+Following: 
+Category: 
+Gender:
+Similarly, from the next line, print the details of the instaHandles of rachelGupta, NikhilChinapa and Baseer_bob.
+
+You need to do this question using classes and objects.
+
+Input Format
+
+No input will be given.
+
+Constraints
+
+There are no constraints.
+
+Output Format
+
+Print the output as given below.
+
+For eg. The output of RaftaarMusic should be printed like this.
+
+Raftaar
+340
+400
+Yes
+7
+200
+Rapper
+M
+Sample Output 0
+
+Raftaar
+340
+400
+Yes
+7
+200
+Rapper
+M
+Rachel Gupta
+550
+350
+Yes
+15
+10
+Artist
+M
+Nikhil Chinapa
+500
+220
+Yes
+5
+210
+VJ
+M
+Baseer
+500
+120
+No
+2
+230
+VJ
+M
+
+
+// Solutions ...................
+
+import java.io.*;
+import java.util.*;
+
+  class Insta {
+      String Name;
+      long Posts;
+      long Reels;
+      String Tick;
+      long  Followers;
+      long Following;
+      String Category;
+      char Gender;
+      
+  }
+public class Solution {
+
+    public static void main(String[] args) {
+        Insta m1=new Insta();
+       
+       //set first  
+        m1.Name="Raftaar";
+        m1.Posts=340;
+        m1.Reels=400;
+        m1.Tick="Yes";
+        m1.Followers=7;
+        m1.Following=200;
+        m1.Category="Rapper";
+        m1.Gender='M';
+
+//print first
+         System.out.println(m1.Name);
+         System.out.println(m1.Posts);
+         System.out.println(m1.Reels);
+         System.out.println(m1.Tick);
+         System.out.println(m1.Followers);
+         System.out.println(m1.Following);
+         System.out.println(m1.Category);
+         System.out.println(m1.Gender);
+        
+        
+        
+        Insta m2=new Insta();
+
+//set the value for Second.
+        m2.Name="Rachel Gupta";
+        m2.Posts=550;
+        m2.Reels=350;
+        m2.Tick="Yes";
+        m2.Followers=15;
+        m2.Following=10;
+        m2.Category="Artist";
+        m2.Gender='M';
+        
+      //    Print the value for Second..
+
+        System.out.println(m2.Name);
+         System.out.println(m2.Posts);
+         System.out.println(m2.Reels);
+         System.out.println(m2.Tick);
+         System.out.println(m2.Followers);
+         System.out.println(m2.Following);
+         System.out.println(m2.Category);
+         System.out.println(m2.Gender);
+        
+        Insta m3=new Insta();
+      //  set the value for Third
+
+        m3.Name="Nikhil Chinapa";
+        m3.Posts=500;
+        m3.Reels=220;
+        m3.Tick="Yes";
+        m3.Followers=5;
+        m3.Following=210;
+        m3.Category="VJ";
+        m3.Gender='M';
+
+     //  Print the value  of Third
+
+          System.out.println(m3.Name);
+         System.out.println(m3.Posts);
+         System.out.println(m3.Reels);
+         System.out.println(m3.Tick);
+         System.out.println(m3.Followers);
+         System.out.println(m3.Following);
+         System.out.println(m3.Category);
+         System.out.println(m3.Gender);
+        
+        Insta m4=new Insta();
+
+        // Set the value of fourth.
+         m4.Name="Baseer";
+        m4.Posts=500;
+        m4.Reels=120;
+        m4.Tick="No";
+        m4.Followers=2;
+        m4.Following=230;
+        m4.Category="VJ";
+        m4.Gender='M';
+
+    // Print the value for fourth.
+
+          System.out.println(m4.Name);
+         System.out.println(m4.Posts);
+         System.out.println(m4.Reels);
+         System.out.println(m4.Tick);
+         System.out.println(m4.Followers);
+         System.out.println(m4.Following);
+         System.out.println(m4.Category);
+         System.out.println(m4.Gender);
+        
+    }
+}
