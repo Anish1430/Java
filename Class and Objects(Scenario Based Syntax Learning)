@@ -229,7 +229,7 @@ public class Solution {
 
 
 
-//1 more Solutions Its Easy to Implement the code..
+//1 more Solutions Its Easy to Implement the code.................
 
 
 import java.io.*;
@@ -246,7 +246,7 @@ class Insta {
     char gender;
     
     Insta(String name, int posts, int reels, String tick, int follower,int following,String rapper,char gender) {
-         this.name=name;
+        this.name=name;   //This is a Keyword refer to the current object and method and Constructor in java
         this.posts=posts;
         this.reels=reels;
         this.tick=tick;
