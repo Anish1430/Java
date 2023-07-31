@@ -1,0 +1,73 @@
+Make a class named movies which has the properties as were given above.
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+Then make a constructor which takes in only two parameters: rating and money. Inside this constructor also write the code System.out.println(“Stored rating and money”);
+
+Make another constructor which takes in three parameters: rating, money and profit. Inside this constructor also write the code System.out.println(“Stored rating, money, profit are given.”);
+
+Make another constructor which takes in four parameters: rating, money and profit, lead actor name. Inside this constructor also write the code System.out.println(“Stored rating, money, profit, lead actors are given.”);
+
+Now make an object named Superman1 and give it the parameters 8, 900000.
+
+Now make an object named Superman2 and give it the parameters 8, 900000,8000.
+
+Now make an object named Superman3 and give it the parameters 8, 900000,8000, “Ranveer Singh”.
+
+Input Format
+
+No inputs are given.
+
+Constraints
+
+There are no constraints.
+
+Output Format
+
+Output will be printed as mentioned in the questions.
+
+////Solution.................
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    int rating;
+    int money;
+     int profit;
+     String actor;
+    
+    public Movie(int rating,int money) {
+        this.rating=rating;
+        this.money=money;
+        System.out.println("Stored rating and money.");
+    }
+    public Movie(int rating,int money,int profit) {
+        this.rating=rating;
+        this.money=money;
+        this.profit=profit;
+        System.out.println("Stored rating, money, profit are given.");
+    }
+    public Movie(int rating,int money,int profit,String actor) {
+        this.rating=rating;
+        this.money=money;
+        this.profit=profit;
+        this.actor=actor;
+    System.out.println("Stored rating, money, profit, lead actors are given.");
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie(8,900000);
+        Movie m2=new Movie(8,900000,8000);
+        Movie m3=new Movie(8,900000,8000,"Ranveer Singh");
+    }
+}
