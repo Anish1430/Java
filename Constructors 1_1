@@ -1,0 +1,121 @@
+Question:- scnerio based Constructors learning.
+
+We want to store the data of 3 movies
+
+You have to store the following data of each movies.
+
+A.  Batman 1:
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+
+B.  Batman 2:
+Rating: 9
+Money Collection: 500,000
+Profit: 8000
+Lead Actor: Akshay
+Lead Actress: Anushka
+
+C.  Batman 3:
+Rating: 10
+Money Collection: 700,000
+Profit: 6000
+Lead Actor: Ajay
+Lead Actress: Deepika 
+Make a class named movies which stores the appropriate properties as given above.
+
+Make a parameterized constructor which stores all the properties of the objects.
+
+Now make 3 objects named batman1 batman2 and batman3 and for its properties assign the values as written above by using a parameterized constructor.
+
+First print the below details of the Batman 1 movie such that each detail is printed in a separate line.
+
+Rating of the movie,
+Money Collection of the movie,
+Profit of the movie,
+Lead Actor of the movie,    
+Lead Actress of the movie.
+Similarly, from the next line, print the details of the movie Batman 2 and after that print the details of the movie Batman 3.
+
+Input Format
+
+No input will be given.
+
+Constraints
+
+No Constraints are there.
+
+Output Format
+
+Print the properties of the object Batman4 but using the proper concepts of object oriented programming language.
+
+9
+700000
+9000
+Jack
+Alia
+Sample Output 0
+
+8
+200000
+5000
+John
+Disha
+9
+500000
+8000
+Akshay
+Anushka
+10
+700000
+6000
+Ajay
+Deepika
+
+//Solutions.........
+import java.io.*;
+import java.util.*;
+  class Movie {
+     int rating;
+     long money;
+     long profit;
+       String actor;
+      String actress;
+      
+      Movie(int rating,long money,long profit,String actor,String actress) {
+          this.rating=rating;
+          this.money=money;
+          this.profit=profit;
+          this.actor=actor;
+          this.actress=actress;
+      }
+  }
+
+public class Solution {
+    public static void main(String[] args) {
+        Movie m1=new  Movie(8,200000,5000,"John","Disha");
+        Movie m2=new Movie(9,500000,8000,"Akshay","Anushka");
+        Movie m3=new Movie(10,700000,6000,"Ajay","Deepika");
+         
+        
+        System.out.println(m1.rating);
+        System.out.println(m1.money);
+        System.out.println(m1.profit);
+        System.out.println(m1.actor);
+        System.out.println(m1.actress);
+        
+        System.out.println(m2.rating);
+        System.out.println(m2.money);
+        System.out.println(m2.profit);
+        System.out.println(m2.actor);
+        System.out.println(m2.actress);
+        
+        System.out.println(m3.rating);
+        System.out.println(m3.money);
+        System.out.println(m3.profit);
+        System.out.println(m3.actor);
+        System.out.println(m3.actress);
+    }
+}
