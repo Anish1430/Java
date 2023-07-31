@@ -1,0 +1,107 @@
+Make a class named movies which has the properties as were given above.
+
+Sample object batman1 of the class movies has the properties as listed below
+
+Batman 1:
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+Now make a function named propDisplay() inside this class, which displays the values of all the properties of the class movies such that each property is printed in a separate line.
+
+Then assign the values to the object Batman1, Batman2, Batman3 as listed using the parameterized constructor.
+
+Batman 1:
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+
+
+Batman 2:
+Name:Batman 2
+Rating: 9
+Money Collection: 500,000
+Profit: 8000
+Lead Actor: Rannvijay Singha & Prince Narula
+Lead Actress: Neha Dhupia
+
+
+Batman 3:
+Name:Batman 3
+Rating: 10
+Money Collection: 700,000
+Profit: 6000
+Lead Actor: Rachel Gupta & Prince Narula
+Lead Actress: Neha Dhupia
+Then print these values using the propDisplay() method made inside the class.
+
+Note: Display all the properties of the batman1 first, then display the properties of the batman2, then display the properties of the batman3 object.
+
+Also you need to make sure that each property is printed in a separate line.
+
+Input Format
+
+No input will be given.
+
+Batman 1
+8
+200000
+5000
+Rachel Gupta & Nikhil Chinapa
+Disha
+Constraints
+
+No Constraints
+
+Output Format
+
+Print the ouput of all the three objects as asked in the question.
+
+//Solutions.................
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    String name;
+    int rating;
+    int money;
+    int profit;
+    String actor;
+    String actress;
+    
+    Movie(String name,int rating,int money,int profit,String actor,String actress) {
+            this.name=name;
+            this.rating=rating;
+            this.money=money;
+            this.profit=profit;
+            this.actor=actor;
+            this.actress=actress;
+    }
+    public void propDisplay() {
+        System.out.println(name);
+        System.out.println(rating);
+        System.out.println(money);
+        System.out.println(profit);
+        System.out.println(actor);
+        System.out.println(actress);
+    }    
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie("Batman 1",8,200000,5000,"Rachel Gupta & Nikhil Chinapa","Disha");
+        Movie m2=new Movie("Batman 2",9,500000,8000,"Rannvijay Singha & Prince Narula","Neha Dhupia");
+        
+        Movie m3=new Movie("Batman 3",10,700000,6000,"Rachel Gupta & Prince Narula","Neha Dhupia");
+        
+          m1.propDisplay();
+           m2.propDisplay();
+           m3.propDisplay();
+    }
+}
