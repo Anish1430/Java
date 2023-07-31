@@ -1,0 +1,94 @@
+Make a class named movies which has the properties as were given above.
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+Make a new method(function) inside the class named checkHit() which takes in the parameter rating of the object and returns true or false accordingly.
+
+checkHit() returns true if rating is more than 5 otherwise returns false.
+
+Then assign the values to the object Batman1, Batman2, Batman3 as listed using the parameterized constructor.
+
+Batman 1:
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+
+
+Batman 2:
+Name:Batman 2
+Rating: 9
+Money Collection: 500,000
+Profit: 8000
+Lead Actor: Rannvijay Singha & Prince Narula
+Lead Actress: Neha Dhupia
+
+
+Batman 3:
+Name:Batman 3
+Rating: 4
+Money Collection: 700,000
+Profit: 6000
+Lead Actor: Rachel Gupta & Prince Narula
+Lead Actress: Neha Dhupia
+Now call the method checkHit() for all of the above objects.
+
+Input Format
+
+No input will be given.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Print the ouput such that each line should contain only a single output.
+
+//Solutions...............
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static class Movies {
+        private String name;
+        private int rating;
+        private int moneyCollection;
+        private int profit;
+        private String leadActor;
+        private String leadActress;
+
+        public Movies(String name, int rating, int moneyCollection, int profit, String leadActor, String leadActress) {
+            this.name = name;
+            this.rating = rating;
+            this.moneyCollection = moneyCollection;
+            this.profit = profit;
+            this.leadActor = leadActor;
+            this.leadActress = leadActress;
+        }
+
+        public boolean checkHit() {
+            return rating > 5;
+        }
+    }
+
+    public static void main(String[] args) {
+        Movies batman1 = new Movies("Batman 1", 8, 200000, 5000, "Rachel Gupta & Nikhil Chinapa", "Disha");
+        Movies batman2 = new Movies("Batman 2", 9, 500000, 8000, "Rannvijay Singha & Prince Narula", "Neha Dhupia");
+        Movies batman3 = new Movies("Batman 3", 4, 700000, 6000, "Rachel Gupta & Prince Narula", "Neha Dhupia");
+
+        System.out.println(batman1.checkHit());
+        System.out.println(batman2.checkHit());
+        System.out.println(batman3.checkHit());
+    }
+}
