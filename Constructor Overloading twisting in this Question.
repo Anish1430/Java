@@ -1,0 +1,70 @@
+Make a class named movies which has the properties as were given above.
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+Make a constructor which takes in five parameters in the order given: rating, money and profit, lead actor name, lead actress name. Inside this constructor also write the code System.out.println(“Lead actor has the main role.”);
+
+Make another constructor which takes in five parameters in the order given: lead actress name, lead actor name,rating, money and profit, Inside this constructor also write the code System.out.println(“Lead actress has the main role.”);
+
+Now make an object named Superman1 and give it the parameters 8, 900000,8000, “Rachel Gupta”,”Disha” in the order mentioned.
+
+Make another object named Superman2 and give it the parameters ”Vaani Gupta”, “Prince Narula”,9, 1900000,28000 in the order mentioned.
+
+Input Format
+
+No inputs are given.
+
+Constraints
+
+There are no constraints.
+
+Output Format
+
+Output will be printed as mentioned in the questions.
+
+//Solution...............
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    String name;
+    int rating;
+    int money;
+    int profit;
+    String actor;
+    String actress;
+    
+    public Movie(int rating,int money,int profit,String actor,String actress) {
+        this.rating=rating;
+        this.money=money;
+        this.profit=profit;
+        this.actor=actor;
+        this.actress=actress;
+        System.out.println("Lead actor has the main role.");
+    }
+    public Movie(String actor,String actress,int rating,int money,int profit ){
+        this.actor=actor;
+        this.actress=actress;
+        this.rating=rating;
+        this.money=money;
+        this.profit=profit;
+        
+        System.out.println("Lead actress has the main role.");
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m=new Movie(8,900000,8000,"Rachel Gupta","Disha");
+        Movie m2=new Movie("Vaani Gupta","Prince Narula",9,1900000,28000);
+    }
+}
