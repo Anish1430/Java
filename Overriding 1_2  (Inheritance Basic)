@@ -1,0 +1,116 @@
+Question:-Basic of Inheritance (Overriding).
+
+ Make a class named movies which has the properties as are given below
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+All the properties listed above are public.
+
+Inside this make a method named displayRating() which prints the value of instance variable rating in the first line.
+
+And in the second line it prints “This is the function of movies class.”
+
+Now make a new class named commercialMovies which inherits the properties of movies class.
+
+Also make a method named displayRating() inside the commercialMovies class, which prints the value of instance variable rating in the first line. And in the second line it prints “This is the function of the commercial movies class.”
+
+Now make an object named londonDreams of the class commercialMovies. And assign the values as listed below to this object upon initialization.
+
+Name: London Dreams
+Rating: 10
+Money Collection: 9000000
+Profit: 70000000
+Lead Actor: “Salman Khan”
+Lead Actress:”Asin”
+Views:10000
+Likes:500
+Then call the method displayRating() of the commercialMovies object
+
+Input Format
+
+No inputs will be given
+
+Constraints
+
+No constraints are there
+
+Output Format
+
+Print the output as given in the question.
+
+Sample Output 0
+
+10
+This is the function of the commercial movies class.
+
+
+//Solution................
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    String name;
+    int ra;
+    int mo;
+    int pr;
+    String act;
+    String acts;
+    Movie(String name,int ra,int mo,int pr,String act,String acts) {
+        this.name=name;
+        this.ra=ra;
+        this.mo=mo;
+        this.pr=pr;
+        this.act=act;
+        this.acts=acts;
+    }
+    public void displayRating() {
+        System.out.println(this.ra);
+        System.out.println("This is the function of movies class.");
+    }
+}
+
+class CommsMovie extends Movie{
+    
+    CommsMovie(String name,int ra,int mo,int pr,String act,String acts) {
+        super(name,ra,mo,pr,act,acts);
+    }
+    public void displayRating() {
+        System.out.println(this.ra);
+        System.out.println("This is the function of the commercial movies class.");
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        CommsMovie m1=new CommsMovie("London Dreams",10,9000000,70000000,"Salman Khan","Asin");
+            m1.displayRating();
+    }
+}
+
+ // 1 more Solutions.............
+
+  import java.io.*;
+import java.util.*;
+class Movie{
+  int Rating;
+}
+class commer extends Movie {
+         public void displayRating(int rating) {
+                 Rating=rating;
+                   System.out.println(Rating);
+                     System.out.println("This is the function of the commercial movies class.");
+    }}
+public class Solution {
+    public static void main(String[] args) {
+            commer lon=new commer();
+          lon.displayRating(10);  
+    }
+}
