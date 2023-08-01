@@ -1,0 +1,102 @@
+Make a class named movies which has the properties as are given below
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+All the properties listed above are public.
+
+Inside this make a method named displayRating() which prints the value of instance variable rating in the first line.
+
+And in the second line it prints “This is the function of movies class.”
+
+Now make a new class named commercialMovies which inherits the properties of movies class.
+
+Now make an object named londonDreams of the class commercialMovies.
+
+And assign the values as listed below to this object upon initialization.
+
+Name: "London Dreams 2"
+Rating: 10
+Money Collection(in crores): 9000
+Profit(in crores): 8850
+Lead Actor: “Rannvijay Singha, Rachel Gupta, Prince Narula”
+Lead Actress:”Prajakta”
+Then print the values of money collection, profit, lead actor of the commercial movies object, using the dot operator.
+
+Then call the method displayRating() of the commercialMovies object.
+
+Input Format
+
+No input will be given
+
+Constraints
+
+No constraints
+
+Output Format
+
+No output will be given.
+
+Sample Output 0
+
+9000
+8850
+Rannvijay Singha, Rachel Gupta, Prince Narula
+10
+This is the function of movies class.
+
+
+//Solution...........
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    String name;
+    int rating;
+    int money;
+    int profit;
+    String actor;
+    String actress;
+    
+     Movie(String name,int rating,int money,int profit,String actor,String actress) {
+          this.name=name;
+          this.rating=rating;
+          this.money=money;
+          this.profit=profit;
+          this.actor=actor;
+          this.actress=actress;
+     }
+    public void displayRating() {
+        System.out.println(this.rating);
+        System.out.println("This is the function of movies class.");
+    }
+}
+  //Create a new Class and called them as CommsMovie .....
+    class CommsMovie extends  Movie {
+        
+        // constructor under constructorbase class
+        
+        CommsMovie(String name,int rating,int money,int profit,String actor,String actress) {
+          // It is used to call superclass methods, and to access the superclass constructor.
+            
+            super(name,rating,money,profit,actor,actress);
+    }
+    }
+public class Solution {
+  
+    public static void main(String[] args) {
+       CommsMovie m1=new CommsMovie("London Dreams 2",10,9000,8850,"Rannvijay Singha, Rachel Gupta, Prince Narula","Prajakta"); 
+         System.out.println(m1.money);
+          System.out.println(m1.profit);
+          System.out.println(m1.actor);
+          m1.displayRating();
+        
+    }
+}
