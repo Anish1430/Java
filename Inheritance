@@ -1,0 +1,108 @@
+Make a class named movies which has the properties as were given above.
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+All the properties listed above are public.
+
+Now inside this class make two private properties views and likes.
+
+Now make a public method named displayViews, which prints the views of the object.
+
+Now make a public method named displayLikes, which prints the likes of the object.
+
+Now make an object superman1 and assign it the properties upon initialisation
+
+Superman 1
+Name: Superman 1
+Rating: 8
+Money Collection: 90000
+Profit: 1000
+Lead Actor: Rachel Gupta and Prince Narula
+Lead Actress: Aarushi
+Views:10000
+Likes:500
+Make a new private method named calculateGrade which takes in views and likes as parameters.
+
+It calculates the value of finalGrade using the formula,
+finalGrade=10*likes + views,
+Now this function returns the finalGrade value.
+
+Then, make a public method named printGrade which calls the method calculateGrade, and then prints the value finalGrade that is returned by calculateGrade.
+
+So now call the method printGrade for the superman1 object using the dot operator.
+
+Input Format
+
+No input will be given.
+
+Constraints
+
+There are no constraints
+
+Output Format
+
+No output will be given
+
+///Solution...............
+
+import java.io.*;
+import java.util.*;
+
+class Movie {
+    String name;
+    int ra;
+    int mo;
+    int pr;
+    String ac;
+    String acts;
+    private int views;
+    private int likes;
+    
+    public Movie(String name,int ra,int mo,int pr,String ac,String acts,int views,int likes) {
+        this.name=name;
+        this.ra=ra;
+        this.mo=mo;
+        this.pr=pr;
+        this.ac=ac;
+        this.acts=acts;
+        this.views=views;
+        this.likes=likes;
+    }
+    
+    public void displayViews() {
+        System.out.println(views);
+    }
+    public void displayLikes() {
+        System.out.println(likes);
+    }
+    private int calculateGrade(int views,int likes) {
+       return 10*likes+views;
+    }
+    
+    public void  printGrade() {
+        int finals=calculateGrade(views,likes);
+        System.out.println(finals);
+    }
+    public void print() {
+        System.out.println(ra);
+        System.out.println(mo);
+        System.out.println(pr);
+        System.out.println(ac);
+        System.out.println(acts);
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie("Superman 1",8,90000,1000,"Rachel Gupta and Prince Narula","Aarushi",10000,500);
+          m1.printGrade();
+            
+    }
+}
