@@ -1,0 +1,133 @@
+Make a class named movies which has the properties as are given below
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: John
+Lead Actress: Disha
+All the properties listed above are public.
+
+Inside this make a method named displayRating() which prints the value of instance variable rating in the first line.
+
+And in the second line it prints “This is the function of movies class.”
+
+Now make a new class named commercialMovies which inherits the properties of movies class.
+
+Also make a method named displayRating() inside the commercialMovies class, which prints the value of instance variable rating in the first line. And in the second line it prints “This is the function of the commercial movies class.”
+
+Now make an object named londonDreams of the class commercialMovies. And assign the values as listed below to this object upon initialization.
+
+Name: London Dreams
+Rating: 10
+Money Collection: 9000000
+Profit: 70000000
+Lead Actor: “Salman Khan”
+Lead Actress:”Asin”
+Views:10000
+Likes:500
+Now, you have to make a new class named creativeMovies which inherits the class movies.
+
+Inside this creativeMovies class, make a method named displayRating() which prints the rating of the object in the first line and prints the line “Inside the creativeMovies class” in the next line.
+
+Also, make another object named andhadhun of the class creativeMovies. And assign the values as listed below of this object upon initialization.
+
+Name: Andhadhun
+Rating: 10
+Money Collection: 7000000
+Profit: 800000
+Lead Actor: “Ayushman Khurana”
+Lead Actress:”Disha”
+Views:20000
+Likes:400
+Now, first call the method displayRating() for the object londonDreams.
+
+Then, again call the method displayRating() for the object Andhadhun.
+
+Input Format
+
+No input will be given
+
+Constraints
+
+No constraints
+
+Output Format
+
+No output will be given
+
+//Solution...
+
+
+
+import java.io.*;
+import java.util.*;
+class Movie{
+  public String Name;
+  public int Rating;
+  public int Money;
+  public int Profit;
+  public String Actor;
+  public String Actress;
+  
+Movie(String Name, int Rating, int Money, int Profit, String Actor, String Actress){
+  
+  
+        this.Name = Name;
+        this.Rating = Rating;
+        this.Money = Money;
+        this.Profit = Profit;
+        this.Actor = Actor;
+        this.Actress = Actress;
+  }
+    public void displayRating() {
+        // System.out.println(this.Rating);
+        System.out.println("This is the function of movies class.");
+    }
+}
+class CommercialMovie extends Movie{
+  int Views;
+  int Likes;
+   CommercialMovie(String Name, int Rating, int Money, int Profit, String Actor, String Actress,int Views,int Likes){
+  
+  super(Name,Rating,Money,Profit,Actor,Actress);
+        this.Views=Views;
+        this.Likes=Likes;
+  }
+  public void displayRating() {
+        System.out.println(this.Rating);
+        System.out.println("This is the function of the commercial movies class.");
+    }
+}
+class CreativeMovie extends Movie{
+  int Views;
+  int Likes;
+  CreativeMovie(String Name, int Rating, int Money, int Profit, String Actor, String Actress,int Views,int Likes){
+  
+ super(Name,Rating,Money,Profit,Actor,Actress);
+        this.Views=Views;
+        this.Likes=Likes;
+    
+  }
+  
+  public void displayRating() {
+        System.out.println(this.Rating);
+        System.out.println("Inside the creativeMovies class");
+    }
+}
+
+///Anish Kumar Sharma
+
+public class Solution {
+    public static void main(String[] args) {
+      
+      CommercialMovie  londonDreams = new CommercialMovie("London Dreams",10,9000000,70000000,"Salman Khan","Asin",10000,500);
+      CreativeMovie  andhadhun = new CreativeMovie("Andhadhun",10,7000000,800000,"Ayushman Khurana","Disha",20000,400);
+      
+      londonDreams.displayRating();
+      andhadhun.displayRating();
+    }
+}
