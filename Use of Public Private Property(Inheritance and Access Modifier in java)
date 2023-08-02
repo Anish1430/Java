@@ -1,0 +1,98 @@
+Question:-Use of Public Private Property(Inheritance and Access Modifier in java).
+
+Make a class named movies which has the properties as are given below
+
+Sample object batman1 of the class movies has the properties as listed below
+
+batman1
+Name:Batman 1
+Rating: 8
+Money Collection: 200,000
+Profit: 5000
+Lead Actor: Rachel Gupta & Nikhil Chinapa
+Lead Actress: Disha
+All the properties listed above are public.
+
+Now inside this class make two private properties views and likes.
+
+Now make a public method named displayViews, which prints the views of the object.
+
+Now make a public method named displayLikes, which prints the likes of the object.
+
+Now make an object superman1 and assign it the properties upon initialisation
+
+Superman 1
+Name: Superman 1
+Rating: 8
+Money Collection: 90000
+Profit: 1000
+Lead Actor: Rachel Gupta and Prince Narula
+Lead Actress: Aarushi
+Views:10000
+Likes:500
+Now print the following properties using the dot operator of the superman1 object. Rating, Money Collection, Profit, Lead Actor, Lead Actress such that each property is printed in a new line.
+
+Now call the method displayViews of superman1 object. Now call the method displayLikes of superman1 object.
+
+Input Format
+
+No input will be given.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Print the output accordingly.
+
+////Solutions......
+
+ import java.io.*;
+import java.util.*;
+
+class Movie {
+//Create a instance Variable .......
+    String name;
+    int ra;
+    int mo;
+    int pr;
+    String ac;
+    String acts;
+    private long views;
+    private long likes;
+    
+    public Movie(String name,int ra,int mo,int pr,String ac,String acts,long views,long likes) {
+//Self referential pointer (this keyword)
+        this.name=name;
+        this.ra=ra;
+        this.mo=mo;
+        this.pr=pr;
+        this.ac=ac;
+        this.acts=acts;
+        this.views=views;
+        this.likes=likes;
+    }
+  //Create a function
+    public void displayViews(){
+        System.out.println(views);
+    }
+   //create another function....
+    public void displayLikes() {
+        System.out.println(likes);
+    } 
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Movie m1=new Movie("Superman 1",8,90000,1000,"Rachel Gupta and Prince Narula","Aarushi",10000,500);
+  //Printing the rating,money Collection ,profit ,lead actor and lead actress.
+        System.out.println(m1.ra);
+         System.out.println(m1.mo);
+         System.out.println(m1.pr);
+         System.out.println(m1.ac);
+         System.out.println(m1.acts);
+        m1.displayViews();
+        m1.displayLikes();
+    }
+}
