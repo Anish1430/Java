@@ -1,0 +1,134 @@
+Question:- Methods 2_1 scenario based Question
+
+Make a class named influencer which can store the below values.
+
+Name: String Type
+Total Posts: Int Data Type
+Total Reels: Int Data Type
+Blue tick: Boolean Data Type
+Followers(in millions) : Int Data Type
+Following: Int Data Type
+Category: String Data Type
+Gender: Char Data Type
+You have to store the information of the influencer by using the appropriate variables.
+
+Sample Object of the influencer class looks like this:
+
+name: Raftaar
+total_posts: 340
+total_reels: 400
+blue_tick: true
+followers(in millions) : 7
+following: 200
+category: Rapper
+gender: M
+Now make a parametrized constructor in the class.
+
+The parametrized constructor should take the following properties in the order mentioned
+
+    name, total_posts, total_reels, blue_tick, followers(in millions), following,
+    category,gender.
+Now make a function named propDisplay() inside this class, which displays the values of all the properties in the order mentioned above, such that each property is printed in a separate line.
+
+Now using the scanner take the below values of this object.
+
+    name,
+    total_posts,
+    total_reels,
+    blue_tick,
+    followers(in millions),
+    following,
+    category,
+    gender.
+Now intialise the corresponding values of the object using the parametrised constructor.
+
+Then call the method propDisplay() for the object.
+
+Input Format
+
+Take the inputs as mentioned in the description above.
+
+Constraints
+
+Constraints are according to the data-types mentioned.
+
+Output Format
+
+Print the output as mentioned in the description above.
+
+Sample Input 0
+
+Raftaar
+340
+400
+true
+7
+200
+Rapper
+M
+Sample Output 0
+
+Raftaar
+340
+400
+true
+7
+200
+Rapper
+M
+
+//Solution............
+
+import java.io.*;
+import java.util.*;
+
+class Influ{
+    String name;
+    int posts;
+     int reels;
+      boolean tick;
+     int foll;
+    int follo;
+     String cat;
+     char gender;
+    
+    public Influ(String name,int posts,int reels,boolean tick,int foll,int follo,String cat,char gender) {
+         this.name=name;
+         this.posts=posts;
+          this.reels=reels;
+          this.tick=tick;
+          this.foll=foll;
+          this.follo=follo;
+          this.cat=cat;
+          this.gender=gender;   
+    }
+      public void propDisplay() {
+           System.out.println(name);
+            System.out.println(posts);
+            System.out.println(reels);
+            System.out.println(tick);
+            System.out.println(foll);
+            System.out.println(follo);
+            System.out.println(cat);
+           System.out.println(gender);
+           
+      }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          String name=sc.nextLine();
+           int posts=sc.nextInt();
+          int reels=sc.nextInt();
+          boolean tick=sc.nextBoolean();
+          int foll=sc.nextInt();
+          int follo=sc.nextInt();
+          String cat=sc.next();
+          char gender=sc.next().charAt(0);
+        
+        Influ m1=new Influ(name,posts,reels,tick,foll,follo,cat,gender);
+          m1.propDisplay();
+        
+    }
+}
