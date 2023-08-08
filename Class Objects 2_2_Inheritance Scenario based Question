@@ -1,0 +1,146 @@
+Question :-Class Objects 2_2_Inheritance Scenario based Question
+
+Make a class named influencer which can store the below values.
+
+Name: String Type
+Total Posts: Int Data Type
+Total Reels: Int Data Type
+Blue tick: Boolean Data Type
+Followers(in millions) : Int Data Type
+Following: Int Data Type
+Category: String Data Type
+Gender: Char Data Type
+You have to Store the below information of the influencer by using the appropriate variables.
+
+Sample Object of the influencer class looks like this:
+
+name: Raftaar
+total_posts: 340
+total_reels: 400
+blue_tick: true
+followers(in millions) : 7
+following: 200
+category: Rapper
+gender: M
+Now using the scanner take the below values of this object.
+
+    name,
+    total_posts,
+    total_reels,
+    blue_tick,
+    followers(in millions),
+    following,
+    category,
+    gender.
+Then print all the values of the object, such that each value of each object is printed in one line.
+
+Input Format
+
+Take the inputs as mentioned in the description above.
+
+Constraints
+
+Constraints are according to the data-types mentioned.
+
+Output Format
+
+Print the output as mentioned in the description above.
+
+Sample Input 0
+
+Raftaar
+340
+400
+true
+7
+200
+Rapper
+M
+Sample Output 0
+
+Raftaar
+340
+400
+true
+7
+200
+Rapper
+M
+Sample Input 1
+
+Nikhil Chinapa
+500
+220
+true
+5
+210
+VJ
+M
+Sample Output 1
+
+Nikhil Chinapa
+500
+220
+true
+5
+210
+VJ
+M
+
+
+//Solution.......................
+
+   import java.io.*;
+import java.util.*;
+class Influ{
+    String name;
+    int post;
+    int reels;
+    boolean tick;
+    int foll;
+    int follo;
+    String cat;
+    char gender;
+      //Create a Constructor //
+    Influ(String name,int post,int reels,boolean tick,int foll,int follo,String cat,char gender) {
+         this.name=name;
+         this.post=post;
+         this.reels=reels;
+         this.tick=tick;
+         this.foll=foll;
+          this.follo=follo;
+         this.cat=cat;
+          this.gender=gender;
+    }
+      
+    public void printInf() {
+        System.out.println(this.name);
+         System.out.println(this.post);
+         System.out.println(this.reels);
+           System.out.println(this.tick);
+           System.out.println(this.foll);
+           System.out.println(this.follo);
+           System.out.println(this.cat);
+           System.out.println(this.gender);
+        
+    }
+}
+public class Solution {
+   
+    public static void main(String[] args) {
+
+  //Create a User Input in java //
+        Scanner sc=new Scanner(System.in);
+          String name=sc.nextLine();
+          int post=sc.nextInt();
+          int reels=sc.nextInt();
+          boolean tick=sc.nextBoolean();
+          int foll=sc.nextInt();
+          int follo=sc.nextInt();
+          String cat=sc.next();
+          char gender=sc.next().charAt(0);
+        
+        Influ m1=new Influ(name,post,reels,tick,foll,follo,cat,gender);
+         m1.printInf();
+    }
+} 
