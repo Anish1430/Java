@@ -1,0 +1,112 @@
+Make a class named influencer which can store the below values.
+
+Name: String Type
+Total Posts: Int Data Type
+Total Reels: Int Data Type
+Blue tick: Boolean Data Type
+Followers(in millions) : Int Data Type
+Following: Int Data Type
+Category: String Data Type
+Gender: Char Data Type
+Store the below information of the influencer by using the appropriate variables.
+
+Sample Object of the influencer class looks like this:
+
+name: Raftaar
+total_posts: 340
+total_reels: 400
+blue_tick: true
+followers(in millions) : 7
+following: 200
+category: Rapper
+gender: M
+Now make a parametrized constructor in the class.
+
+The parametrized constructor should take the following properties in the order mentioned
+
+    name, total_posts, total_reels, blue_tick, followers(in millions), following,
+    category,gender.
+Make a new method named checkVerified() inside the class influencer. This method checks if the given influencer is verified or not.
+
+If the given influencer is not verified print “Needs Verification” And if the given influencer is verified then print “Already Verified”.
+
+Implement this method for each of the objects made above.
+
+Now using the scanner first take the objects's name.
+
+Then take the below values of this object using the scanner.
+
+    name,
+    total_posts,
+    total_reels,
+    blue_tick,
+    followers(in millions),
+    following,
+    category,
+    gender.
+Now intialise the corresponding values of the object using the parametrised constructor.
+
+Then call the method checkVerified() for the object.
+
+Input Format
+
+Take the inputs as mentioned in the description above.
+
+Constraints
+
+Constraints are according to the data-types mentioned.
+
+Output Format
+
+Print the output as mentioned in the description above.
+
+ //// Solution........
+
+import java.io.*;
+import java.util.*;
+
+class Influ{
+     String name;
+     int posts;
+     int reels;
+     boolean tick;
+     int foll;
+     int follo;
+     String cat;
+     char gender;
+    
+    public Influ(String name,int posts,int reels,boolean tick,int foll,int follo,String cat,char gender) {
+         this.name=name;
+         this.posts=posts;
+         this.reels=reels;
+         this.tick=tick;
+         this.foll=foll;
+        this.follo=follo;
+         this.cat=cat;
+          this.gender=gender;
+    }
+    public void checkVerified(){
+           if(this.tick==true) {
+               System.out.println("Already Verified");
+           }else {
+                System.out.println("Needs Verification");
+           }
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+          String name=sc.nextLine();
+          int posts=sc.nextInt();
+          int reels=sc.nextInt();
+          boolean tick=sc.nextBoolean();
+          int foll=sc.nextInt();
+         int follo=sc.nextInt();
+         String cat=sc.next();
+         char gender=sc.next().charAt(0);
+        
+        Influ m1=new Influ(name,posts,reels,tick,foll,follo,cat,gender);
+          m1.checkVerified();
+    }
+}
