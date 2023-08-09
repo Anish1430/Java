@@ -1,0 +1,157 @@
+You have to store the information about videos by making a class named “youtubeVideo”.
+
+This class “youtubeVideo” should have the data-members:
+
+song: Stores the value (String Data-type)
+artist: Stores the value  (String Data-Type), 
+views: Stores the value (int Data-Type),
+likes: Stores the values number of likes (int data-type), 
+releasedYear: Stores the value (int Data-Type)
+n: stores the size of arraylist named comments (int data-type)
+comments: This is an arraylist which stores the Strings
+Now make an object of the class youtubeVideo.
+
+Now make a parametrised constructor which takes the value of the constructor in the order mentioned below.
+
+song: 
+artist: 
+views: 
+likes:  
+releasedYear: 
+n:
+comments: 
+Then take the below values of this object using the scanner in the order mentioned
+
+song: 
+artist: 
+views: 
+likes:  
+releasedYear: 
+n:
+comments: 
+
+Note that: Each string in the comments array can be made of more than one word.
+Then print all the values of the object, such that each value of an object is printed in one line.
+
+Note that: Each string in the comments arraylist should be printed in a separate        line. And all the words in a string should be printed in the same line.
+Input Format
+
+Take the input as mentioned above.
+
+Constraints
+
+Constraints are according to the data-type of the properties.
+
+Output Format
+
+Print the output as mentioned above.
+
+Sample Input 0
+
+Kafla 2
+Prince and Rachel
+700000
+40000
+2022
+5
+Nice Prince
+New version of Rachel
+Nice song Prince and Rachel
+Nice song
+Well done Rachel and Prince
+Sample Output 0
+
+Kafla 2
+Prince and Rachel
+700000
+40000
+2022
+5
+Nice Prince
+New version of Rachel
+Nice song Prince and Rachel
+Nice song
+Well done Rachel and Prince
+Sample Input 1
+
+Gaadi Mod 2
+Rannvijay and Rachel
+600000
+3000
+2022
+6
+Nice Rann Bhai
+New version of Rachel
+Nice song Rann and Rachel
+Great song great lyrics
+Nice
+Great Song
+Sample Output 1
+
+Gaadi Mod 2
+Rannvijay and Rachel
+600000
+3000
+2022
+6
+Nice Rann Bhai
+New version of Rachel
+Nice song Rann and Rachel
+Great song great lyrics
+Nice
+Great Song
+
+  //Solution.............
+
+import java.io.*;
+import java.util.*;
+class Youtube{
+    String songs;
+    String artist;
+    int views;
+    int likes;
+    int year;
+    int n;
+    ArrayList<String> cmts=new ArrayList<>();
+    
+    Youtube(String songs,String artist,int views,int likes,int year,int n,ArrayList<String> cmts) {
+        this.songs=songs;
+        this.artist=artist;
+        this.views=views;
+        this.likes=likes;
+        this.year=year;
+        this.n=n;
+        this.cmts=cmts;
+    }
+     public void printYoutube() {
+         System.out.println(songs);
+          System.out.println(artist);
+          System.out.println(views);
+          System.out.println(likes);
+          System.out.println(year);
+          System.out.println(n);
+          for(String i : cmts) {
+              System.out.println(i);
+          }
+     }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+         String songs=sc.nextLine();
+         String artist=sc.nextLine();
+         int views=sc.nextInt();
+         int likes=sc.nextInt();
+          int year=sc.nextInt();
+          int n=sc.nextInt();
+          sc.nextLine();
+         ArrayList<String> cmts=new ArrayList<>();
+          for(int i=0;i<n;i++){
+              String co=sc.nextLine();
+                cmts.add(co);
+          }
+        Youtube m1=new Youtube(songs,artist,views,likes,year,n,cmts);
+          m1.printYoutube();
+    }
+}
