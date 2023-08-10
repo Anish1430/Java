@@ -1,0 +1,130 @@
+You have to store the information about videos by making a class named “youtubeVideo”.
+
+This class “youtubeVideo” should have the data-members:
+
+song: Stores the value (String Data-type)
+artist: Stores the value  (String Data-Type), 
+views: Stores the value (int Data-Type),
+likes: Stores the values number of likes (int data-type), 
+releasedYear: Stores the value (int Data-Type)
+n: stores the size of arraylist named comments (int data-type)
+comments: This is an arraylist which stores the Strings
+Now make a parametrised constructor which takes the value of the constructor in the order mentioned below.
+
+song: 
+artist: 
+views: 
+likes:  
+releasedYear: 
+n:
+comments:
+Now make a method named getProp() inside this class which prints all the values of the object, such that each value of an object is printed in one line.
+
+Note that: Each string in the comments arraylist should be printed in a separate        line. And all the words in a string should be printed in the same line.
+Now make an object of the class youtubeVideo.
+
+Then take the below values of this object using the scanner in the order mentioned
+
+song: 
+artist: 
+views: 
+likes:  
+releasedYear: 
+n:
+comments: 
+
+Note that: Each string in the comments array can be made of more than one word.
+And then call the method getProp() for this object formed.
+
+Input Format
+
+Take the input as mentioned above.
+
+Constraints
+
+Constraints are according to the data-type of the properties.
+
+Output Format
+
+Print the output as mentioned above.
+
+Sample Input 0
+
+Move 2
+Raftaar and Rachel
+100000
+10000
+2020
+4
+Nice
+Good song
+Liked it
+What a song
+Sample Output 0
+
+Move 2
+Raftaar and Rachel
+100000
+10000
+2020
+4
+Nice
+Good song
+Liked it
+What a song
+
+//Solution..........
+
+   import java.io.*;
+import java.util.*;
+
+class Youtube{
+    String songs;
+    String artist;
+    int views;
+    int likes;
+    int year;
+    int n;
+    ArrayList<String> cmts=new ArrayList<>();
+    
+    Youtube(String songs,String artist,int views,int likes,int year,int n,ArrayList<String> cmts) {
+        this.songs=songs;
+        this.artist=artist;
+        this.views=views;
+        this.likes=likes;
+        this.year=year;
+        this.n=n;
+        this.cmts=cmts;
+    }
+    public void getProp(){
+        System.out.println(songs);
+        System.out.println(artist);
+        System.out.println(views);
+        System.out.println(likes);
+        System.out.println(year);
+        System.out.println(n);
+         for(String i: cmts){
+             System.out.println(i);
+         }
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+         String songs=sc.nextLine();
+         String artist=sc.nextLine();
+         int views=sc.nextInt();
+         int likes=sc.nextInt();
+         int year=sc.nextInt();
+         int n=sc.nextInt();
+          sc.nextLine();
+         ArrayList<String> cmts=new ArrayList<>();
+          for(int i=0;i<n;i++){
+               String co=sc.nextLine();
+                cmts.add(co);
+          }
+        Youtube m1=new Youtube(songs,artist,views,likes,year,n,cmts);
+          m1.getProp();
+    }
+}
