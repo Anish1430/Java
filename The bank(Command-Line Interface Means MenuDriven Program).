@@ -1,0 +1,143 @@
+Description: You are supposed to implement the requirements provided below by creating a cli application in a programming language you choose.
+
+You will be building a banking application. The user will be able to perform the following actions along with the needed Input.
+
+you will be given a Stream of string input.
+
+case 1. "CREATE AC001 KELP" --> this means we have to create an account of account number AC001 and name KELP.
+
+case 2. "DEPOSIT AC001 10000" --> this means we have to deposit 10000 in AC001 bank account.
+
+case 3. "WITHDRAW AC001 1000" --> this means we have to withdraw 1000 from AC001 bank account.
+
+case 4. "BALANCE AC001" --> this means we have to print the name of the account holder and balance the his account.
+
+case 5. "0" -> END (End the program).
+
+Suggestion -
+1. Create a class called Account which contains attributes Amount, Name , ID.
+
+Use hashmap to store multiple accounts
+Input Format
+
+stream of string input will be given.
+
+Constraints
+
+1 <= string length <=1000
+
+Output Format
+
+print the output as shown in sample output.
+
+Sample Input 0
+
+CREATE ACC001 KELP 
+DEPOSIT ACC001 10000 
+WITHDRAW ACC001 1000 
+CREATE ACC002 FVTPL 
+DEPOSIT ACC002 10000 
+WITHDRAW ACC002 2000 
+BALANCE ACC002 
+BALANCE ACC001 
+0
+
+Sample Output 0
+
+FVTPL 8000
+KELP 9000
+
+ ///Solution...............
+
+   import java.io.*;
+import java.util.*;
+
+class Account{
+     private String accNum;
+     private String accHolder;
+     private  long  balance;
+    
+    //Constructor 
+     public Account(String accNum,String accHolder) {
+         this.accNum=accNum;
+         this.accHolder=accHolder;
+         this.balance=0;
+     }
+    
+     //getter
+     public String getaccNum(){
+         return this.accNum;
+     }
+    
+    public String getaccHolder() {
+        return this.accHolder;
+    }
+    
+    public long getshowBalance() {
+         return this.balance;
+    }
+    
+    //setter :set 0r update the value of variable ....
+     public void setaccNum(String accNum){
+           this.accNum=accNum;
+     }
+      
+     public void setaccHolder(String accHolder) {
+         this.accHolder=accHolder;
+     }
+    
+    //Deposit
+    public void deposit(long money) {
+         this.balance +=money;
+    }
+    
+     //Withdraw
+    
+     public void withdraw(long money) {
+           if(money <=this.balance) {
+           this.balance -=money;
+           }else {
+               System.out.println("Insufficient Balance");
+           }
+     }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+          HashMap<String,Account> data=new HashMap<>();
+        while(true) {
+            String option=sc.next();
+             if(option.equals("CREATE")) {
+                 String accNum=sc.next();
+                 String accHolder=sc.next();
+                 
+                 //create database for Menu Driven Program to Store in hashMap>>>>
+                 Account acc=new Account(accNum,accHolder);
+                 data.put(accNum,acc);
+                 
+             }else if(option.equals("DEPOSIT")){
+                 String accNum=sc.next();
+                 long money=sc.nextLong();
+                  
+                 Account acc=data.get(accNum);
+                  acc.deposit(money);
+             }else if(option.equals("WITHDRAW")){
+                 String accNum=sc.next();
+                 long money=sc.nextLong();
+                 
+                 Account acc=data.get(accNum);
+                 acc.withdraw(money);
+             }else if(option.equals("BALANCE")){
+                 String accNum=sc.next();
+                 
+                 Account acc=data.get(accNum);
+                 System.out.print(acc.getaccHolder() + " ");
+                 System.out.println(acc.getshowBalance());
+             }else {
+                 break;
+             }
+        }
+    }
+}
