@@ -1,0 +1,128 @@
+Make a class named youtubeVideo which has the public properties
+
+song: Stores the value (String Data-type)
+artist: Stores the value  (String Data-Type), 
+views: Stores the value (int Data-Type),
+likes: Stores the values number of likes (int data-type), 
+releasedYear: Stores the value (int Data-Type)
+comments: This is an array which stores the Strings.
+This class also has a method printTempRank() and this function prints the line “Method of youtubeVideo class. Also can not find the rank right now.”
+
+Now make a class shortVideo() which inherits all the properties of the class youtubeVideo.
+
+Now make an object of the class shortVideo and call the method printTempRank() for this object.
+
+Then take the below values of this object using the scanner in the order mentioned
+
+song: 
+artist: 
+views: 
+likes:  
+releasedYear: 
+n:
+comments: 
+
+Note that: Each string in the comments array can be made of more than one word.
+Then call the method printTempRank() for this object.
+
+Input Format
+
+Take the input as mentioned above.
+
+Constraints
+
+Constraints are according to the data-type of the properties.
+
+Output Format
+
+Print the output as mentioned above.
+
+Sample Input 0
+
+Move 2
+Raftaar and Rachel
+100000
+10000
+2022
+4
+Nice
+Good song
+Liked it
+What a song
+Sample Output 0
+
+Method of youtubeVideo class. Also can not find the rank right now.
+Sample Input 1
+
+Kafla 2
+Prince and Rachel
+700000
+40000
+2022
+4
+Nice Prince
+New version of Rachel
+Nice song Prince and Rachel
+Nice song
+Sample Output 1
+
+Method of youtubeVideo class. Also can not find the rank right now.
+
+//Solutions...........
+
+    import java.io.*;
+import java.util.*;
+
+class Youtube{
+    String songs;
+    String artist;
+    int views;
+    int likes;
+    int year;
+     int n;
+    
+    ArrayList<String> cmts=new ArrayList<>();
+    
+    //Creating Constructor ...............
+    
+    public Youtube(String songs,String artist,int views,int likes,int year,int n,ArrayList<String> cmts) {
+         this.songs=songs;
+         this.artist=artist;
+         this.views=views;
+         this.likes=likes;
+         this.year=year;
+         this.n=n;
+         this.cmts=cmts;
+    }
+    public void tempRank() {
+        System.out.println("Method of youtubeVideo class. Also can not find the rank right now.");
+    }
+}
+
+class Short extends Youtube{
+      Short(String songs,String artist,int  views,int likes,int year,int n,ArrayList<String> cmts) {
+          
+            //  Parent referential pointer call super /// 
+          super(songs,artist,views,likes,year,n,cmts); //tu mere khwaboo mai jawaabo mai sawaalo mai //  
+      }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+          String songs=sc.nextLine();
+          String artist=sc.nextLine();
+          int views=sc.nextInt();
+          int likes=sc.nextInt();
+          int year=sc.nextInt();
+          int n=sc.nextInt();
+          sc.nextLine();
+           ArrayList<String> cmts=new ArrayList<>();
+           for(int i=0;i<n;i++) {
+                 String co=sc.nextLine();
+                   cmts.add(co);
+           }
+         Short m1=new Short(songs,artist,views,likes,year,n,cmts);
+          m1.tempRank();
+    }
+}
